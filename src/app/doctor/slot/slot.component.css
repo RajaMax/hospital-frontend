@@ -1,0 +1,13 @@
+.slot-button{
+    color: blue;
+    background-color: white;
+    border: none;
+}
+.slot{
+    color: blue;
+    width: 100px;
+    height: 32px;
+    background: white;
+    border-color: #bfbff3;
+    border-width: 2px;
+}

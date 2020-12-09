@@ -1,0 +1,55 @@
+<br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <ngb-datepicker #dp [(ngModel)]="date" (navigate)="date = $event.next"></ngb-datepicker>
+    </div>
+    <div class="col-8">
+      <div class="row">
+        <div class="col-6">Morning</div>
+        <div class="col-6" style="float: right;"><button class="slot-button" (click)="openMorning=true">+ Add Slots</button></div>
+      </div>
+      <div class="row" *ngIf="openMorning">
+        <div class="col-4">
+          <label>From</label>
+          <ngb-timepicker [(ngModel)]="morningFromtime"></ngb-timepicker>
+        </div>
+        <div class="col-4">
+          <label>To</label>
+          <ngb-timepicker [(ngModel)]="morningTotime"></ngb-timepicker>
+        </div>
+        <div class="col-4">
+            <button (click)="saveSlot('morning')">Save</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3" *ngFor="let slot of morningSlots">
+            <button class="slot">{{slot.toTime}}</button>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-6">Evening</div>
+        <div class="col-6" style="float: right;"><button class="slot-button" (click)="openEvening=true">+ Add Slots</button></div>
+      </div>
+      <div class="row" *ngIf="openEvening">
+        <div class="col-4">
+          <label>From</label>
+          <ngb-timepicker [(ngModel)]="eveningFromtime"></ngb-timepicker>
+        </div>
+        <div class="col-4">
+          <label>To</label>
+          <ngb-timepicker [(ngModel)]="eveningTotime"></ngb-timepicker>
+        </div>
+        <div class="col-4">
+            <button (click)="saveSlot('evenig')">Save</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3" *ngFor="let slot of eveningSlots">
+          <button class="slot">{{slot.toTime}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

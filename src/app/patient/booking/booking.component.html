@@ -1,0 +1,20 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+  <label>
+    Name:
+    <input type="text" formControlName="patientName">
+  </label><br>
+
+  <label>
+    Contact Number:
+    <input type="text" formControlName="contactNumber">
+  </label><br>
+  <label>
+    Slot:
+    <select class="form-control" id="slot" formControlName="slotId">
+      <option *ngFor="let c of slots" [value]="c._id">{{c.fromTime}} </option>
+    </select>
+  </label><br>
+  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+
+</form>
